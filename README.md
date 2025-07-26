@@ -35,3 +35,48 @@ Responder can capture NTLMv2 hashes via LLMNR/NBT-NS spoofing:
 
 ```bash
 sudo responder -I eth0
+
+It listens for broadcast name resolution requests.
+
+Spoofs responses to trick the victim into authenticating to the attacker.
+
+NTLMv2 hashes are captured and stored for cracking.
+
+4. Password Cracking with Hashcat
+Use Hashcat to crack captured NTLMv2 hashes:
+
+hashcat -m 5600 hashes.txt rockyou.txt --force
+-m 5600: NTLMv2 format
+
+Use rockyou.txt or custom wordlists.
+
+Strong GPU = faster cracking.
+
+5. LLMNR Poisoning Defense
+Disable LLMNR and NBT-NS via Group Policy:
+
+
+Computer Configuration > Admin Templates > Network > DNS Client
+Enforce strong password policies.
+
+Use SMB signing to prevent relay attacks.
+
+Monitor for Responder/rogue traffic using tools like Zeek or endpoint EDRs.
+
+6. SMB Relay Attacks Overview
+Instead of capturing hashes, SMB Relay attacks use those hashes in real-time to authenticate against another system.
+
+Tool: ntlmrelayx.py from Impacket
+
+Commonly used to pivot and escalate privileges.
+
+
+sudo ntlmrelayx.py -tf targets.txt -smb2support
+Requires SMB signing to be disabled.
+
+Can lead to shell access or dumping of sensitive files.
+
+Disclaimer
+This repository is for educational and ethical hacking purposes only. Never use these techniques on systems without explicit permission.
+
+
