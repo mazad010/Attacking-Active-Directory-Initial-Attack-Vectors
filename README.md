@@ -36,5 +36,7 @@ Responder can capture NTLMv2 hashes via LLMNR/NBT-NS spoofing:
 ```bash
 sudo responder -I eth0
 
+---
+
 
 
