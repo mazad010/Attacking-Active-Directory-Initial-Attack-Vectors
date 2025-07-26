@@ -44,7 +44,5 @@ sudo responder -I eth0
 
 ---
 
-#4-password-cracking-with-hashcat
-- To protect your environment from **LLMNR/NBT-NS** spoofing attacks:
 
 
