@@ -1,10 +1,10 @@
-# 🛡️ Attacking Active Directory: Initial Attack Vectors
+#  Attacking Active Directory: Initial Attack Vectors
 
 This repository documents techniques and tools used in the **initial stages** of attacking Active Directory (AD) environments. It includes practical demonstrations and defenses for common attack vectors such as LLMNR poisoning and SMB relaying.
 
 ---
 
-## 📌 Table of Contents
+##  Table of Contents
 1. [Introduction](#1-introduction)  
 2. [LLMNR Poisoning Overview](#2-llmnr-poisoning-overview)  
 3. [Capturing NTLMv2 Hashes with Responder](#3-capturing-ntlmv2-hashes-with-responder)  
@@ -35,6 +35,3 @@ Responder can capture NTLMv2 hashes via LLMNR/NBT-NS spoofing:
 
 ```bash
 sudo responder -I eth0
-
-
-
