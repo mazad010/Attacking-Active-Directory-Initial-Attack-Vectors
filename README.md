@@ -37,14 +37,14 @@ Responder can capture NTLMv2 hashes via LLMNR/NBT-NS spoofing:
 sudo responder -I eth0
 `````
 
--**-m 5600:** Specifies NTLMv2 hash mode
--**hashes.txt:** File containing the captured hashes
--**rockyou.txt:** Wordlist used for the attack (can be replaced with custom wordlists)
--**--force:** Optional flag to override warnings
+- **-m 5600:** Specifies NTLMv2 hash mode
+- **hashes.txt:** File containing the captured hashes
+- **rockyou.txt:** Wordlist used for the attack (can be replaced with custom wordlists)
+- **--force:** Optional flag to override warnings
 
 ---
 
-## 4. LLMNR Poisoning Defense
+#4-password-cracking-with-hashcat
 - To protect your environment from **LLMNR/NBT-NS** spoofing attacks:
 
 
